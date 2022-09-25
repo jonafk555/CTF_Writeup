@@ -3,8 +3,7 @@
 
 2. 到 message list: `https://ctf.hackme.quest/gb/index.php?mod=home`，點擊發的文，觸發XSS。
 
-3. 觸發後，得到: `[https://ctf.hackme.quest/gb/?mod=read&id=78](ht[
-](https://ctf.hackme.quest/gb/?mod=read&id=787)tps://ctf.hackme.quest/gb/?mod=read&id=787)7` url。
+3. 觸發後，得到: `https://ctf.hackme.quest/gb/?mod=read&id=787` url。
 
 4. `sqlmap -u "https://ctf.hackme.quest/gb/?mod=read&id=787" --dbs --dump`掃
 
