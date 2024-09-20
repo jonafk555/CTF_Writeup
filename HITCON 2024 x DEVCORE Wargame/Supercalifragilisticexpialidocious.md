@@ -20,7 +20,7 @@ echo "valid";
 3. 最後結束為了符合syntax，我們要先以`;`結束`system()`，再以`/*`註解掉後面被我們截斷的程式碼。
 
 - 到目前為止整個拼起來就是`;}system(%27ls%27);/*`
-    - 可以讀到：![image]([https://hackmd.io/_uploads/B1pnTh8o0.png](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b349ed601f40f8036ab212a4fb8eafd9.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823767&Signature=NZwL7KYrqr%2B%2FEKEIkUq2QYvvLj4%3D))
+    - 可以讀到：![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b349ed601f40f8036ab212a4fb8eafd9.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823767&Signature=NZwL7KYrqr%2B%2FEKEIkUq2QYvvLj4%3D)
 
 4. 我們繼續讀檔，可以找到根目錄有一個`flag.txt`，嘗試：`;}system(%27cat /flag.txt%27);/*`，但卻讀不到。
 5. 再以`;}system(%27ls -al /flag.txt%27);/*`查看，必須要`root`權限才能讀。
