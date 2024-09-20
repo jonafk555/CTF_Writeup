@@ -1,6 +1,6 @@
 # Expressionism
 - 在code(`Expressionism\src\main\java\tw\devcore\wargame\controller`):
-![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b349ed601f40f8036ab212a4fb8eafd9.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824233&Signature=s6x%2B1LDUmwDbbAi0NWxFSvQl%2Fu8%3D)
+![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_65f86ac6582094a9120320c11f976272.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824369&Signature=F9IZ0O0XPTQiNgGt7%2Bk0MnnVhm8%3D)
 * 可以看到：
 1. IndexController(是一個 Spring MVC 控制器)，負責處理`/` URL 的 GET 請求。
 2. `id` 參數可以通過查詢字符串傳入，如果未提供 `id`，則會隨機生成一個數字並作為 `id`。
