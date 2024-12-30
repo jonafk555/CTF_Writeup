@@ -4,7 +4,7 @@
 1. 在輸入框輸入的值會被傳入到`code`的`GET`參數裡。
 2. `code`參數的值會被拼接到`create_function()`，並且回傳`valid`。
 3. 解析錯誤的值則會回傳`syntax error`。
-![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_7b1159fe29b864f96da616f3949b4742.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823868&Signature=SE2U%2B4R%2FoSflNjuVmVC43ZFSY9M%3D)
+![image](https://github.com/user-attachments/assets/92d3a2b8-3df9-4803-bc7e-4caae2d41c83)
 
 由上述邏輯可知，當攻擊者輸入一段任意php code則可以達成**php code injection**
 拿這段來看：
@@ -20,11 +20,13 @@ echo "valid";
 3. 最後結束為了符合syntax，我們要先以`;`結束`system()`，再以`/*`註解掉後面被我們截斷的程式碼。
 
 - 到目前為止整個拼起來就是`;}system(%27ls%27);/*`
-    - 可以讀到：![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b349ed601f40f8036ab212a4fb8eafd9.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823767&Signature=NZwL7KYrqr%2B%2FEKEIkUq2QYvvLj4%3D)
+    - 可以讀到：![image](https://github.com/user-attachments/assets/93f51a23-e63a-4d2e-a739-302eac3334c6)
 
 4. 我們繼續讀檔，可以找到根目錄有一個`flag.txt`，嘗試：`;}system(%27cat /flag.txt%27);/*`，但卻讀不到。
 5. 再以`;}system(%27ls -al /flag.txt%27);/*`查看，必須要`root`權限才能讀。
-    - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_e8fd903bda08dfca73dc8f480a9620bc.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823919&Signature=N%2B89PaX%2FjEBHfkMNKX5bQWE0QbA%3D)
+    - ![image](https://github.com/user-attachments/assets/da6a1054-a402-4aab-b26b-6bce87316557)
+
 6. 但發現根目錄底下也有一個編譯後的檔案：`/readflag`
 7. 嘗試執行：`;}system(%27/readflag%27);/*`
-    - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_6ea7ad158bcce2debdcc761cd7a6a35b.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726823888&Signature=RIht%2Bj73kWGJJqazFEGwfUqXA08%3D)
+    - ![image](https://github.com/user-attachments/assets/4226013e-15c0-433f-a87f-b99fc9ed5f86)
+
