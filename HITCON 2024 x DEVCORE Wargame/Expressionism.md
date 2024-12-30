@@ -1,6 +1,7 @@
 # Expressionism
 - 在code(`Expressionism\src\main\java\tw\devcore\wargame\controller`):
-![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_65f86ac6582094a9120320c11f976272.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824369&Signature=F9IZ0O0XPTQiNgGt7%2Bk0MnnVhm8%3D)
+  ![image](https://github.com/user-attachments/assets/9b703ac6-9f1d-44b6-ab43-b4088a55005b)
+
 * 可以看到：
 1. IndexController(是一個 Spring MVC 控制器)，負責處理`/` URL 的 GET 請求。
 2. `id` 參數可以通過查詢字符串傳入，如果未提供 `id`，則會隨機生成一個數字並作為 `id`。
@@ -22,7 +23,7 @@ life.quotes.10=生活不是等待暴風雨過去，而是學會在雨中起舞�
 life.quotes.11=Life is pain dayo.
 ```
 4. 接下來因為在程式碼(`Expressionism\src\main\webapp\WEB-INF\views\index.jsp`)中，出現了：
-    - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_39cf20c9bdbf2d327c775c602de6c144.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824266&Signature=VEiPoU7vIQhuYytf7holRcjGYGw%3D)
+    - ![image](https://github.com/user-attachments/assets/01b467ff-e0ba-49d9-93b4-5c1aef3f4e32)
     - `id` 可由使用者任意輸入，結果為第三點所述。
     - 但因為`id`是使用者可控，因此猜測可能存在Injection問題。
 
@@ -35,8 +36,8 @@ graph TD;
 ```
 5. 接著我們可以試著輸入`${1+1}`來驗證是否回顯第二個(?id=2)結果，證明是否存在injection問題。
     - 直接輸入`?id=${1+1}`會因為RPC所以不能正常顯示，因此要將`${1+1}`URL encode成`%24%7B1%2B1%7D`：
-    - ![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_870a80e81708c3278d9752db4ccfc461.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824288&Signature=byJX39F%2BOx3pWA8cwWuPDZ65Dko%3D)
+    - ![image](https://github.com/user-attachments/assets/17939b9a-05c7-47cd-9a62-26c762a6746b)
 
 6. 確認有Injection問題，接著要利用此漏洞來得到Flag
 7. 最後我們根據code(`Expressionism\src\main\java\tw\devcore\wargame\controller`)得到 payload：`?id=%24%7BFLAG%7D`
-![image](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_fd5ad3e9a093b8d589609fe12c551aa3.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1726824313&Signature=DmUIMacWYe2ydjqZIRVz%2FkhiiTI%3D)
+![image](https://github.com/user-attachments/assets/f94ce5a7-118e-4a83-88bf-679cd0776d9f)
